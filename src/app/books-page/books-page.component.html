@@ -1,0 +1,25 @@
+<main>
+    <header>
+        <div>
+            <img src="../../assets/img/logoBiblioteche.png" alt="logoBiblioteche">
+            <span>Lista libri</span>
+        </div>
+        <form>
+            <input type="text" placeholder="Titolo o ISBN" [(ngModel)]="searchFilters.titolo" name="title">
+            <button (click)="search()">Search</button>
+            <button (click)="toggleAdvanced()">Avanzati</button>
+            <input type="text" placeholder="Genere" *ngIf="advanced" [(ngModel)]="searchFilters.genere" name="genere">
+            <input type="text" placeholder="Autore" *ngIf="advanced" [(ngModel)]="searchFilters.autore" name="autore">
+            <input type="text" placeholder="Casa editrice" *ngIf="advanced" [(ngModel)]="searchFilters.casaEditrice" name="casaEditrice">
+        </form>
+    </header>
+    <div class="books">
+        <div class="book" *ngFor="let book of books">
+            <div class="book-title"><b>Titolo: </b>{{book.title}}</div>
+            <div class="book-author"><b>Autore: </b>{{book.author}}</div>
+            <div class="book-publisher"><b>Casa editrice: </b>{{book.publisher}}</div>
+            <div class="book-genre"><b>Genere: </b>{{book.genre}}</div>
+            <div class="book-isbn"><b>ISBN: </b>{{book.isbn}}</div>
+        </div>
+    </div>
+</main>

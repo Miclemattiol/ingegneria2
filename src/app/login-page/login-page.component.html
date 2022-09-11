@@ -1,0 +1,19 @@
+<div class="page">
+    <header>
+        <img src="../../assets/img/logoBiblioteche.png" alt="Logo biblioteche">
+        <span>Software biblioteche trentine</span>
+    </header>
+    <div class="login">
+        <span>
+            Login
+        </span>
+        <span>
+            Accedi con le tue credenziali
+        </span>
+        <form>
+            <input type="email" placeholder="Email" [(ngModel)]="credentials.email" name="email" #email>
+            <input type="password" placeholder="Password" [(ngModel)]="credentials.password" name="password" #password>
+            <button (click)="login()">Login</button>
+        </form>
+    </div>
+</div>

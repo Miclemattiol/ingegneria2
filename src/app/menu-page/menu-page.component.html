@@ -1,0 +1,18 @@
+<main>
+    <header>
+        <div>
+            <img src="../../assets/img/logoBiblioteche.png" alt="logoBiblioteche">
+            <span>Software biblioteche trentine</span>
+        </div>
+        <div *ngIf="userService.user">
+            <span>Benvenuto: {{userService.user.name}} {{userService.user.surname}}</span>
+            <button (click)="logout()">Logout</button>
+        </div>
+    </header>
+    <div class="menu">
+        <div class="menu-item" *ngFor="let item of menuItems" (click)="router.navigateByUrl(item.link)">
+            {{item.name}}
+            <span class="unsupported" *ngIf="!item.supported">**Not supported yet**</span>
+        </div>
+    </div>
+</main>
